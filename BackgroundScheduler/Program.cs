@@ -21,12 +21,15 @@ namespace BackgroundScheduler
                 WallpaperService autoWallpaperService = new WallpaperService();
                 autoWallpaperService.OnStartConslose();
             }
-            ServiceBase[] ServicesToRun;
-            ServicesToRun = new ServiceBase[]
+            else
             {
+                ServiceBase[] ServicesToRun;
+                ServicesToRun = new ServiceBase[]
+                {
                 new WallpaperService()
-            };
-            ServiceBase.Run(ServicesToRun);
+                };
+                ServiceBase.Run(ServicesToRun);
+            }
         }
     }
 }
